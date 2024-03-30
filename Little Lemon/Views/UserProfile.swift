@@ -12,15 +12,23 @@ struct UserProfile: View {
     @State var lastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
     @State var email = UserDefaults.standard.string(forKey: kEmail) ?? ""
     
+    @State var isLoggedOut: Bool = false
+    
     @Environment(\.presentationMode) var presentation
     
     var body: some View {
         VStack(alignment: .leading) {
+            NavigationLink(destination: Onboarding(), isActive: $isLoggedOut) { }
+            Header()
             Text("Personal Information")
                 .font(.system(size: 24))
                 .bold()
-            Image("profile-image-placeholder").resizable()
-                .aspectRatio(contentMode: .fit)
+            HStack() {
+                Spacer()
+                Image("profile-image-placeholder").resizable()
+                    .aspectRatio(contentMode: .fit)
+                Spacer()
+            }
             
             VStack(alignment: .leading, spacing: 0) {
                 Text("First Name")
@@ -44,35 +52,32 @@ struct UserProfile: View {
                 UserDefaults.standard.removeObject(forKey: kEmail)
                 
                 UserDefaults.standard.setValue(false, forKey: kIsLoggedIn)
-                
-                self.presentation.wrappedValue.dismiss()
+                isLoggedOut = true
             }
-            .frame(maxWidth: .infinity)
-            .tint(.black)
-            .padding()
-            .cornerRadius(25)
-            .background(Color(red: 242 / 255, green: 199 / 255, blue: 52 / 255))
+                .frame(maxWidth: .infinity)
+                .tint(.black)
+                .padding()
+                .cornerRadius(25)
+                .background(Color(red: 242 / 255, green: 199 / 255, blue: 52 / 255))
             
             HStack {
                 Spacer()
                 NavigationLink(destination: Menu()) {
-                    Button("Discard changes") {
-                        
-                    }
-                    .frame(width: 150, height: 40)
-                    .cornerRadius(15)
-                    .tint(.black)
-                    .border(Color(red: 64 / 255, green: 83 / 255, blue: 77 / 255))
+                    Button("Discard changes") {}
+                        .frame(width: 150, height: 40)
+                        .cornerRadius(15)
+                        .tint(.black)
+                        .border(Color(red: 64 / 255, green: 83 / 255, blue: 77 / 255))
                 }
                 Button("Save changes") {
                     UserDefaults.standard.setValue(firstName, forKey: kFirstName)
                     UserDefaults.standard.setValue(lastName, forKey: kLastName)
                     UserDefaults.standard.setValue(email, forKey: kEmail)
                 }
-                .frame(width: 150, height: 40)
-                .cornerRadius(15)
-                .tint(.white)
-                .background(Color(red: 64 / 255, green: 83 / 255, blue: 77 / 255))
+                    .frame(width: 150, height: 40)
+                    .cornerRadius(15)
+                    .tint(.white)
+                    .background(Color(red: 64 / 255, green: 83 / 255, blue: 77 / 255))
                 Spacer()
             }
             

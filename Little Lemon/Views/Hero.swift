@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Hero: View {
+    @State var isLoggedIn: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Little Lemon")
@@ -18,28 +20,32 @@ struct Hero: View {
                 .foregroundStyle(.white)
             HStack {
                 Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
-                    .font(.system(size: 18))
+                    .font(.system(size: 16))
                     .foregroundStyle(.white)
+                    .fixedSize(horizontal: false, vertical: true)
                 Image("hero")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 150, height: 150)
                     .cornerRadius(15)
             }
-            ZStack {
-                Circle().colorInvert()
-                Image(systemName: "magnifyingglass").foregroundStyle(Color.black)
-                
+            if isLoggedIn {
+                ZStack {
+                    Circle().colorInvert()
+                    Image(systemName: "magnifyingglass").foregroundStyle(Color.black)
+                    
+                }
+                .frame(width: 30, height: 30)
+                .padding([.leading])
             }
-            .frame(width: 30, height: 30)
-            .padding([.leading])
+        }
+        .onAppear() {
+            isLoggedIn = UserDefaults.standard.bool(forKey: kIsLoggedIn)
         }
         .padding(15)
         .background(Color(red: 64 / 255, green: 83 / 255, blue: 77 / 255))
     }
 }
-
-// 242 199 52
 
 #Preview {
     Hero()

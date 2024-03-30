@@ -19,7 +19,6 @@ struct Menu: View {
         VStack {
             Header()
             Hero()
-            
             Text("ORDER FOR DELIVERY!")
                 .font(.system(size: 20))
                 .bold()
@@ -83,7 +82,7 @@ struct Menu: View {
                     }
                 }.listStyle(.plain)
             }
-
+            Spacer()
         }
         .padding(10)
         .onAppear() {

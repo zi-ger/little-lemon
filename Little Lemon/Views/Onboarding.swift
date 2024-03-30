@@ -22,10 +22,33 @@ struct Onboarding: View {
     var body: some View {
         NavigationView {
             VStack {
+                Header()
+                Hero()
                 NavigationLink(destination: Home(), isActive: $isLoggedIn) { }
-                TextField("First Name", text: $firstName)
-                TextField("Last Name", text: $lastName)
-                TextField("Email", text: $email)
+                
+                VStack {
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("First Name *")
+                            .font(.system(size: 14))
+                            .foregroundColor(.gray)
+                        TextField("First Name", text: $firstName)
+                    }
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("First Name *")
+                            .font(.system(size: 14))
+                            .foregroundColor(.gray)
+                        TextField("Last Name", text: $lastName)
+                    }
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("First Name *")
+                            .font(.system(size: 14))
+                            .foregroundColor(.gray)
+                        TextField("Email", text: $email)
+                    }
+                }
+                .textFieldStyle(.roundedBorder)
+                .padding()
+                
                 Button("Register") {
                     let udFirstName = UserDefaults.standard.string(forKey: kFirstName) ?? ""
                     let udLastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
@@ -43,8 +66,14 @@ struct Onboarding: View {
                         isLoggedIn = true
                     }
                 }
+                    .frame(width: 150, height: 40)
+                    .cornerRadius(15)
+                    .tint(.white)
+                    .background(Color(red: 64 / 255, green: 83 / 255, blue: 77 / 255))
+                Spacer()
             }
         }
+        .navigationBarBackButtonHidden()
         .onAppear() {
             isLoggedIn = UserDefaults.standard.bool(forKey: kIsLoggedIn)
         }
