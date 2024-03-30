@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		130C7BF92BB7C7B60028F355 /* Little_LemonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C7BF82BB7C7B60028F355 /* Little_LemonApp.swift */; };
-		130C7BFB2BB7C7B60028F355 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C7BFA2BB7C7B60028F355 /* ContentView.swift */; };
 		130C7BFD2BB7C7B80028F355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130C7BFC2BB7C7B80028F355 /* Assets.xcassets */; };
 		130C7C002BB7C7B80028F355 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130C7BFF2BB7C7B80028F355 /* Preview Assets.xcassets */; };
 		130C7C072BB87B480028F355 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C7C062BB87B480028F355 /* Onboarding.swift */; };
@@ -28,7 +27,6 @@
 /* Begin PBXFileReference section */
 		130C7BF52BB7C7B60028F355 /* Little Lemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Lemon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		130C7BF82BB7C7B60028F355 /* Little_LemonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Little_LemonApp.swift; sourceTree = "<group>"; };
-		130C7BFA2BB7C7B60028F355 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		130C7BFC2BB7C7B80028F355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		130C7BFF2BB7C7B80028F355 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		130C7C062BB87B480028F355 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		130C7C082BB87B580028F355 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				130C7BFA2BB7C7B60028F355 /* ContentView.swift */,
 				130C7C062BB87B480028F355 /* Onboarding.swift */,
 				1371E02F2BB8806300AEE387 /* Home.swift */,
 				1371E0312BB8809F00AEE387 /* Menu.swift */,
@@ -192,7 +189,6 @@
 				1371E0402BB8965C00AEE387 /* ExampleDatabase.xcdatamodeld in Sources */,
 				130C7C072BB87B480028F355 /* Onboarding.swift in Sources */,
 				1371E0382BB88FA600AEE387 /* Persistence.swift in Sources */,
-				130C7BFB2BB7C7B60028F355 /* ContentView.swift in Sources */,
 				1371E0422BB8A95D00AEE387 /* Header.swift in Sources */,
 				1371E0342BB888AA00AEE387 /* UserProfile.swift in Sources */,
 				1371E0302BB8806300AEE387 /* Home.swift in Sources */,
