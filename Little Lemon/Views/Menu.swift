@@ -10,29 +10,82 @@ import SwiftUI
 struct Menu: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    @State var startersEnabled: Bool = false
+    @State var mainsEnabled: Bool = false
+    @State var dessertsEnabled: Bool = false
+    @State var drinksEnabled: Bool = false
+    
     var body: some View {
         VStack {
-            Text("Little Lemon")
-            Text("Chicago")
-            Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+            Header()
+            Hero()
+            
+            Text("ORDER FOR DELIVERY!")
+                .font(.system(size: 20))
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding([.top, .leading])
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    Toggle("Starters", isOn: $startersEnabled)
+                        .bold()
+                        .accentColor(.black)
+                        .background(Color.gray.opacity(0.3))
+                        .cornerRadius(12)
+                    Toggle("Mains", isOn: $mainsEnabled)
+                        .bold()
+                        .accentColor(.black)
+                        .background(Color.gray.opacity(0.3))
+                        .cornerRadius(12)
+                    Toggle("Desserts", isOn: $dessertsEnabled)
+                        .bold()
+                        .accentColor(.black)
+                        .background(Color.gray.opacity(0.3))
+                        .cornerRadius(12)
+                    Toggle("Drinks", isOn: $drinksEnabled)
+                        .bold()
+                        .accentColor(.black)
+                        .background(Color.gray.opacity(0.3))
+                        .cornerRadius(12)
+                }
+                .toggleStyle(.button)
+                .padding(.horizontal)
+            }
+            Divider()
+            
             FetchedObjects() { (dishes: [Dish]) in
                 List {
                     ForEach(dishes) { dish in
                         HStack {
-                            Text("\(dish.title ?? "") - $\(dish.price ?? "")")
-                            Spacer()
-                            AsyncImage(url: URL(string: dish.image!)) { image in
-                                image.resizable().aspectRatio(contentMode: .fit)
+                            VStack {
+                                Text(dish.title ?? "")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .bold()
+                                    .foregroundColor(.black)
+                                Spacer(minLength: 10)
+                                Text("$" + (dish.price ?? ""))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .foregroundColor(.gray)
+                                    .monospaced()
+                            }
+                            AsyncImage(url: URL(string: dish.image ?? "")) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
                             } placeholder: {
                                 ProgressView()
                             }
-                            .frame(width: 150)
+                            .frame(maxWidth: 90, maxHeight: 90)
+                            .clipShape(Rectangle())
                         }
+                        .padding(.vertical)
+                        .frame(maxHeight: 150)
                     }
-                }
+                }.listStyle(.plain)
             }
 
         }
+        .padding(10)
         .onAppear() {
             getMenuData()
         }
