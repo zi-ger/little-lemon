@@ -34,13 +34,13 @@ struct Onboarding: View {
                         TextField("First Name", text: $firstName)
                     }
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("First Name *")
+                        Text("Last Name *")
                             .font(.system(size: 14))
                             .foregroundColor(.gray)
                         TextField("Last Name", text: $lastName)
                     }
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("First Name *")
+                        Text("Email *")
                             .font(.system(size: 14))
                             .foregroundColor(.gray)
                         TextField("Email", text: $email)
