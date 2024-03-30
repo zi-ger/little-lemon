@@ -15,7 +15,23 @@ struct Menu: View {
             Text("Little Lemon")
             Text("Chicago")
             Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
-            List {}
+            FetchedObjects() { (dishes: [Dish]) in
+                List {
+                    ForEach(dishes) { dish in
+                        HStack {
+                            Text("\(dish.title ?? "") - $\(dish.price ?? "")")
+                            Spacer()
+                            AsyncImage(url: URL(string: dish.image!)) { image in
+                                image.resizable().aspectRatio(contentMode: .fit)
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .frame(width: 150)
+                        }
+                    }
+                }
+            }
+
         }
         .onAppear() {
             getMenuData()
