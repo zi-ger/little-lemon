@@ -50,19 +50,12 @@ struct Onboarding: View {
                 .padding()
                 
                 Button("Register") {
-                    let udFirstName = UserDefaults.standard.string(forKey: kFirstName) ?? ""
-                    let udLastName = UserDefaults.standard.string(forKey: kLastName) ?? ""
-                    let udEmail = UserDefaults.standard.string(forKey: kEmail) ?? ""
-                    
-                    if  udFirstName.isEmpty && udLastName.isEmpty && udEmail.isEmpty {
+                    if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
                         UserDefaults.standard.setValue(firstName, forKey: kFirstName)
                         UserDefaults.standard.setValue(lastName, forKey: kLastName)
                         UserDefaults.standard.setValue(email, forKey: kEmail)
                         
                         UserDefaults.standard.setValue(true, forKey: kIsLoggedIn)
-                        
-                        isLoggedIn = true
-                    } else {
                         isLoggedIn = true
                     }
                 }
