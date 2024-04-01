@@ -18,10 +18,10 @@
 		1371E0382BB88FA600AEE387 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1371E0362BB88FA600AEE387 /* Persistence.swift */; };
 		1371E03B2BB890D100AEE387 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1371E03A2BB890D100AEE387 /* MenuList.swift */; };
 		1371E03D2BB890FB00AEE387 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1371E03C2BB890FB00AEE387 /* MenuItem.swift */; };
-		1371E0402BB8965C00AEE387 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1371E03E2BB8965C00AEE387 /* ExampleDatabase.xcdatamodeld */; };
 		1371E0422BB8A95D00AEE387 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1371E0412BB8A95D00AEE387 /* Header.swift */; };
 		1371E0442BB8AB5900AEE387 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1371E0432BB8AB5900AEE387 /* Hero.swift */; };
 		1371E0462BB8B0CE00AEE387 /* OrdersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1371E0452BB8B0CE00AEE387 /* OrdersList.swift */; };
+		1371E04D2BBB15F300AEE387 /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1371E04B2BBB15F300AEE387 /* ExampleDatabase.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +37,10 @@
 		1371E0362BB88FA600AEE387 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1371E03A2BB890D100AEE387 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		1371E03C2BB890FB00AEE387 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
-		1371E03F2BB8965C00AEE387 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 		1371E0412BB8A95D00AEE387 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		1371E0432BB8AB5900AEE387 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		1371E0452BB8B0CE00AEE387 /* OrdersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersList.swift; sourceTree = "<group>"; };
+		1371E04C2BBB15F300AEE387 /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 				130C7BF82BB7C7B60028F355 /* Little_LemonApp.swift */,
 				1371E0352BB88FA600AEE387 /* FetchedObjects.swift */,
 				1371E0362BB88FA600AEE387 /* Persistence.swift */,
-				1371E03E2BB8965C00AEE387 /* ExampleDatabase.xcdatamodeld */,
+				1371E04B2BBB15F300AEE387 /* ExampleDatabase.xcdatamodeld */,
 				130C7BFC2BB7C7B80028F355 /* Assets.xcassets */,
 				130C7BFE2BB7C7B80028F355 /* Preview Content */,
 			);
@@ -186,7 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1371E0402BB8965C00AEE387 /* ExampleDatabase.xcdatamodeld in Sources */,
+				1371E04D2BBB15F300AEE387 /* ExampleDatabase.xcdatamodeld in Sources */,
 				130C7C072BB87B480028F355 /* Onboarding.swift in Sources */,
 				1371E0382BB88FA600AEE387 /* Persistence.swift in Sources */,
 				1371E0422BB8A95D00AEE387 /* Header.swift in Sources */,
@@ -406,14 +406,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1371E03E2BB8965C00AEE387 /* ExampleDatabase.xcdatamodeld */ = {
+		1371E04B2BBB15F300AEE387 /* ExampleDatabase.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1371E03F2BB8965C00AEE387 /* ExampleDatabase.xcdatamodel */,
+				1371E04C2BBB15F300AEE387 /* ExampleDatabase.xcdatamodel */,
 			);
-			currentVersion = 1371E03F2BB8965C00AEE387 /* ExampleDatabase.xcdatamodel */;
-			name = ExampleDatabase.xcdatamodeld;
-			path = "/Volumes/Workspace/iOS/Little Lemon/Little Lemon/ExampleDatabase.xcdatamodeld";
+			currentVersion = 1371E04C2BBB15F300AEE387 /* ExampleDatabase.xcdatamodel */;
+			path = ExampleDatabase.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
